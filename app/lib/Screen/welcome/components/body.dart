@@ -1,3 +1,5 @@
+import 'package:app/Screen/login/login_screen.dart';
+import 'package:app/Screen/signup/signup_screen.dart';
 import 'package:app/Screen/welcome/components/background.dart';
 import 'package:app/components/rounded_button.dart';
 import 'package:app/constants.dart';
@@ -33,14 +35,26 @@ class Body extends StatelessWidget {
             RoundedButton(
               colorText: Colors.white,
               text: "Login",
-              press: () => {},
+              press: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ))
+              },
               color: kPrimary,
               radius: 50,
             ),
             RoundedButton(
               colorText: Colors.black,
-              text: "Login",
-              press: () => {},
+              text: "Sign Up",
+              press: () => {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SignUpScreen(),
+                    ))
+              },
               color: kPrimaryLightColor,
               radius: 50,
             )
