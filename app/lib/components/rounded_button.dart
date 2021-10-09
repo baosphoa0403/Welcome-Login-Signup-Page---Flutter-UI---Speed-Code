@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class RoundedButton extends StatelessWidget {
   final String text;
-  final Function press;
+  final VoidCallback press;
   final Color color;
   final double radius;
   final Color colorText;
@@ -23,7 +23,7 @@ class RoundedButton extends StatelessWidget {
       height: 50,
       margin: const EdgeInsets.symmetric(vertical: 10),
       child: ElevatedButton(
-        onPressed: () => press,
+        onPressed: press,
         child: Text(
           text,
           style: TextStyle(fontWeight: FontWeight.bold, color: colorText),
