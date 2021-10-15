@@ -8,7 +8,7 @@ class ListIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.stretch, //stretch: kéo dài
+      // crossAxisAlignment: CrossAxisAlignment., //stretch: kéo dài
       children: const <Widget>[
         BlueBox(
           color: Colors.amber,
@@ -18,7 +18,7 @@ class ListIcon extends StatelessWidget {
         ),
         BlueBox(
           color: Colors.cyan,
-        )
+        ),
       ],
     );
     ;

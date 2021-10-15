@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:standard_app/blue_box.dart';
 import 'package:standard_app/list_icons.dart';
 
@@ -17,9 +18,26 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(
-        child: ListIcon(),
-      ),
+      home: Column(children: <Widget>[
+        Expanded(
+          flex: 6, // 60% of space => (6/(6 + 4))
+          child: Container(
+            color: Colors.red,
+          ),
+        ),
+        Expanded(
+          flex: 4, // 40% of space
+          child: Container(
+            color: Colors.purple,
+          ),
+        ),
+        Expanded(
+          flex: 4, // 40% of space
+          child: Container(
+            color: Colors.amber,
+          ),
+        )
+      ]),
     );
   }
 }
@@ -33,24 +51,40 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: child
-        // Column(
-        //   // mainAxisAlignment: MainAxisAlignment.end,
-        //   // crossAxisAlignment: CrossAxisAlignment.end, ?? chỗ này
-        //   children: const <Widget>[
-        //     BlueBox(
-        //       color: Colors.amber,
-        //     ),
-        //     BlueBox(
-        //       color: Colors.blueGrey,
-        //     ),
-        //     BlueBox(
-        //       color: Colors.cyan,
-        //     ),
-        //     child,
-        //   ],
-
-        // ),
-        );
+    return Container(
+      // backgroundColor: const Color.fromRGBO(99, 22, 33, 0.5),
+      // appBar: AppBar(),
+      color: Colors.amberAccent,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: <Widget>[
+          const BlueBox(
+            color: Colors.amber,
+          ),
+          const BlueBox(
+            color: Colors.blueGrey,
+          ),
+          const BlueBox(
+            color: Colors.cyan,
+          ),
+          // child,
+          Row(children: <Widget>[
+            Expanded(
+              flex: 6, // 60% of space => (6/(6 + 4))
+              child: Container(
+                color: Colors.red,
+              ),
+            ),
+            Expanded(
+              flex: 4, // 40% of space
+              child: Container(
+                color: Colors.purple,
+              ),
+            ),
+          ]),
+        ],
+      ),
+    );
   }
 }
